@@ -14,7 +14,7 @@ export default {
           const { email, password } = vlidatedFields.data;
 
           const user = await getUserByEmail(email);
-          if (!user || !user.password) return;
+          if (!user || !user.password) return null;
 
           const passwordsMatch = await bcrypt.compare(password, user.password);
           console.log("passwordsMatch", passwordsMatch);
