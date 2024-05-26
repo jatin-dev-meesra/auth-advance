@@ -22,9 +22,13 @@ const CardWrapper = ({
     <Card className="w-[400px] shadow-md">
       <Header label={headerLabel} />
       <CardContent>{children}</CardContent>
-      <CardFooter>
-        <Social />
-      </CardFooter>
+      {showSocial ? (
+        <CardFooter>
+          <Social />
+        </CardFooter>
+      ) : (
+        ""
+      )}
       <CardFooter>
         <BackButton label={backButtonLabel} href={backButtonHref} />
       </CardFooter>
