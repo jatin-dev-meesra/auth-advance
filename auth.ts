@@ -35,8 +35,9 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
       }
 
       // Prevent SignIn Without email verification
-      const { userId }: any = user.id;
+      const userId: any = user.id;
       const existingUser = await getUserById(userId);
+
       if (!existingUser?.emailVerified) {
         return false;
       }

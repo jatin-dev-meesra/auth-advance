@@ -13,7 +13,6 @@ export const login = async (values: z.infer<typeof LoginSchema>) => {
   if (!validatedFields.success) {
     return { error: "Invalid fields!" };
   }
-  // return { success: "Email sent" };
   const { email, password } = validatedFields.data;
 
   const existingUser = await getUserByEmail(email);
